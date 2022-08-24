@@ -304,6 +304,37 @@ html, body{
   color: var(--color-text);
 }
 
+.github-heading{
+  font-weight: 500;
+}
+
+.repo-text{
+  font-weight: 600;
+  color: var(--color-pink);
+}
+
+.time{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.elapsed{
+  font-weight: 500;
+  line-height: 2;
+  font-size: 16px;
+  margin-left: 8px;
+  color: var(--color-text);
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  background-color: var(--color-pink);
+  border-radius: 50%;
+  display: inline-block;
+}
+
 /* Fancy Decoration Part of Section */
 .section-title{
   position: relative;

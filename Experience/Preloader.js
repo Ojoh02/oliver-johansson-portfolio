@@ -3,6 +3,7 @@ import Experience from "./Experience"
 import GSAP from "gsap"
 import convert from "./Utils/convertDivsToSpans"
 import convertDivsToSpans from "./Utils/convertDivsToSpans"
+import getCommits from "./api/getCommits"
 
 export default class Preloader extends EventEmitter{
     constructor(){
@@ -88,8 +89,29 @@ export default class Preloader extends EventEmitter{
         })
     }
 
-    secondIntro() {
-        return new Promise((resolve) => {
+    async secondIntro() {
+        return new Promise(async (resolve) => {
+            const latestCommit = await getCommits()
+            const current = Date.now()
+            let elapsed = (current - latestCommit?.milliseconds) / 1000 / 60
+            let message
+
+            document.querySelector(".repo-text").textContent = latestCommit?.repoName
+            document.querySelector(".ending-text").textContent = ` from Ojoh02: "${latestCommit?.comments}"`
+            
+            if (elapsed < 60) {
+                message = "mins"
+            } else {
+                elapsed = elapsed / 60
+                if (elapsed < 24) {
+                    message = "hrs"
+                } else {
+                    elapsed = elapsed / 24
+                    message = "days"
+                }
+            }
+            document.querySelector(".elapsed").textContent = `${parseInt(elapsed)} ${message} ago`
+
             this.secondTimeline = new GSAP.timeline()
             
             this.secondTimeline.to(".intro-text .animatethis", {
