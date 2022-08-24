@@ -1,3 +1,3 @@
-let AUTH = `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`;
+let AUTH = `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`;
 
 export default AUTH
