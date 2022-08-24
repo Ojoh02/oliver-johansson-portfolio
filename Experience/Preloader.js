@@ -99,15 +99,27 @@ export default class Preloader extends EventEmitter{
             document.querySelector(".repo-text").textContent = latestCommit?.repoName
             document.querySelector(".ending-text").textContent = ` from Ojoh02: "${latestCommit?.comments}"`
             
-            if (elapsed < 60) {
-                message = "mins"
+            if (parseInt(elapsed) < 60) {
+                if (parseInt(elapsed) == 1) {
+                    message = "min"
+                } else {
+                    message = "mins"
+                }
             } else {
                 elapsed = elapsed / 60
-                if (elapsed < 24) {
-                    message = "hrs"
+                if (parseInt(elapsed) < 24) {
+                    if (parseInt(elapsed) == 1) {
+                        message = "hr"
+                    } else {
+                        message = "hrs"
+                    }
                 } else {
                     elapsed = elapsed / 24
-                    message = "days"
+                    if (parseInt(elapsed) == 1) {
+                        message = "day"
+                    } else {
+                        message = "days"
+                    }
                 }
             }
             document.querySelector(".elapsed").textContent = `${parseInt(elapsed)} ${message} ago`
