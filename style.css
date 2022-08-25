@@ -21,13 +21,16 @@ html, body{
 :root{
   /* Light Theme Variables */
   --color-text-light: #333332;
-  --color-background-light: #FAF4E5;
+  --color-background-light: #faf4e5;
   --color-pink-light: #e5a1aa;
   --color-green-light: #7AD0AC;
   --color-blue-light: #8395CD;
+  --color-blur-light: radial-gradient(circle, rgba(250, 244, 229,0.7428571428571429) 0%, rgba(250,244,229,0.5714285714285714) 100%);
+  
   /* Dark Theme Variables */
   --color-text-dark: #FAF4E5;
   --color-background-dark: #8395CD;
+  --color-blur-dark: radial-gradient(circle, rgba(255,255,255,0.07428571428571429) 0%, rgba(253,246,255,0.0714285714285714) 100%);
 }
 
 .light-theme{
@@ -36,6 +39,7 @@ html, body{
   --color-pink: var(--color-pink-light);
   --color-green: var(--color-green-light);
   --color-blue: var(--color-blue-light);
+  --color-blur: var(--color-blur-light);
 }
 
 .dark-theme{
@@ -44,6 +48,7 @@ html, body{
   --color-pink: var(--color-text-dark);
   --color-green: var(--color-text-dark);
   --color-blue: var(--color-text-dark);
+  --color-blur: var(--color-blur-dark)
 }
 
 /* Experience -------------------------------- */
@@ -223,29 +228,35 @@ html, body{
 
 /* Section Formatting -------------------------------- */
 .section-margin{
-  height: 3000px;
+  height: 2000px;
   width: 100%;
 }
 
 .section{
   position: relative;
   width: 50%;
-  padding: 1000px 4%;
+  padding: 100px 4%;
   margin: 0;
-  background-color: var(--color-background);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3),
+              0 6px 20px rgba(0,0,0,0.15);
   overflow: hidden;
+}
+
+.section{
+  backdrop-filter: blur(6px) saturate(180%);
+  background: var(--color-blur);
 }
 
 .left{
   margin-right: auto;
-  border-top-right-radius: 700px 700px;
-  border-bottom-right-radius: 0px 0px;
+  border-top-right-radius: 300px 300px;
+  border-bottom-right-radius: 100px 100px;
 }
 
 .right{
   margin-left: auto;
-  border-top-left-radius: 700px 700px;
-  border-bottom-left-radius: 0px 0px;
+  border-top-left-radius: 300px 300px;
+  border-bottom-left-radius: 100px 100px;
 }
 
 /* Progress Bars */
@@ -281,7 +292,7 @@ html, body{
   position: relative;
   padding: 20% 5%;
   border-bottom: 2px solid var(--color-pink);
-  padding-bottom: 400px;
+  padding-bottom: 300px;
 }
 
 .section-detail-wrapper{
@@ -293,7 +304,7 @@ html, body{
   font-size: 18px;
   font-weight: 700;
   line-height: 1.8;
-  margin-top: 64px;
+  margin-top: 32px;
   color: var(--color-text);
 }
 
@@ -345,6 +356,7 @@ html, body{
   display: block;
   font-size: 50px;
   font-weight: 500;
+  margin-left: 50px;
   transform-origin: left;
   transform: skewY(25deg);
   z-index: 5;
@@ -357,6 +369,7 @@ html, body{
 .styleThree{
   position: absolute;
   display: block;
+  margin-left: 50px;
   width: 100%;
   max-width: 278px;
   height: 60px;
