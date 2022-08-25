@@ -256,7 +256,6 @@ export default class Preloader extends EventEmitter{
     }
 
     onTouch(e) {
-        console.log(e)
         this.initialY = e.touches[0].clientY
     }
 

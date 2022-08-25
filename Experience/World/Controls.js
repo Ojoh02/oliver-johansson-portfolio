@@ -344,7 +344,6 @@ export default class Controls {
                     }
                 })
 
-                console.log(this.room.children)
                 this.room.children.forEach(child => {
                     if (child.name === "Mini_floor") {
                         this.first = GSAP.to(child.position, {
