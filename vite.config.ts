@@ -17,7 +17,7 @@ export default defineConfig(({ mode }) => {
     }
   
     return {
-      plugins: [vue()],
+      plugins: [],
       define: processEnvValues
     }
 })
