@@ -1,8 +1,8 @@
 import { Octokit, App } from "https://cdn.skypack.dev/octokit?dts";
 
 const getCommits = async () => {
-    const octokit = new Octokit({ auth: import.meta.env.VITE_AUTH_TOKEN });
-    // const octokit = new Octokit({ auth: '' });
+    // const octokit = new Octokit({ auth: import.meta.env.VITE_AUTH_TOKEN });
+    const octokit = new Octokit({ auth: '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' });
     const orgs = await octokit.request(
       `GET /user/orgs`, { }
     );

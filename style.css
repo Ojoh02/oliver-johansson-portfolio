@@ -308,6 +308,10 @@ html, body{
   color: var(--color-text);
 }
 
+.emojis{
+  font-size: 64px;
+}
+
 .section-text{
   line-height: 2;
   margin-top: 18px;
@@ -316,6 +320,7 @@ html, body{
 }
 
 .github-heading{
+  margin-top: 16px;
   font-weight: 500;
 }
 
@@ -344,6 +349,25 @@ html, body{
   background-color: var(--color-pink);
   border-radius: 50%;
   display: inline-block;
+}
+
+.logos-wrapper{
+  color: var(--color-text);
+  margin-right: 16px;
+}
+
+.row-wrapper{
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.final-section{
+  padding: 10% 5%;
+}
+
+.final{
+  margin-top: 32px;
 }
 
 /* Fancy Decoration Part of Section */
@@ -476,6 +500,28 @@ html, body{
     width: 100%;
   }
 
+  .section-title-text{
+    font-size: 45px;
+    margin-left: 35px;
+    margin-top: 10px;
+  }
+
+  .styleOne, 
+  .styleTwo,
+  .styleThree{
+    margin-left: 15px;
+    height: 60px;
+  }
+
+  .styleOne{
+    top: -5px;
+  }
+
+  .styleTwo,
+  .styleThree{
+    top: 65px;
+  }
+  
   .progress-bar-wrapper-left{
     right: 0;
     left: auto;

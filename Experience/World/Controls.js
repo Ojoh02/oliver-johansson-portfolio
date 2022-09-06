@@ -96,8 +96,8 @@ export default class Controls {
                     }
                 })
                 this.firstMoveTimeline.to(this.camera.orthoGraphicCamera.position, {
-                    x: .5,
-                    y: 9,
+                    x: -3,
+                    y: 8,
                 }, 
                 "component").to(this.room.scale, {
                     x: 0.3,
@@ -117,8 +117,8 @@ export default class Controls {
                     }
                 })
                     .to(this.camera.orthoGraphicCamera.position, {
-                    x:  -0.5,
-                    y: 4,
+                    x:  3,
+                    y: 6,
                     z: () => {
                         return this.sizes.height * 0.0032
                     }
@@ -151,7 +151,7 @@ export default class Controls {
                     }
                 }).to(this.camera.orthoGraphicCamera.position, {
                     y: 1,
-                    x: -3,
+                    x: -2,
                 },
                 "equal").to(this.room.scale, {
                     x: 0.2,
@@ -186,8 +186,8 @@ export default class Controls {
                     y: 0.2,
                     z: 0.2,
                 }, "same").to(this.camera.orthoGraphicCamera.position, {
-                    x: 1.25,
-                    y: 7.5,
+                    x: -1.5,
+                    y: 6.5,
                 }, "same"), 
                 // Second section --------------------------------
                 this.secondMoveTimeline = new GSAP.timeline({
@@ -208,8 +208,8 @@ export default class Controls {
                     height: 0.4 * 3.4,
                 }, "same"
                 ).to(this.camera.orthoGraphicCamera.position, {
-                    x:  -1.8,
-                    y: 3,
+                    x:  1.8,
+                    y: 5,
                     z: () => {
                         return this.sizes.height * 0.0032
                     }
@@ -225,8 +225,12 @@ export default class Controls {
                     }
                 }).to(this.camera.orthoGraphicCamera.position, {
                     y: .5,
-                    x: -1.5,
-                })
+                    x: -1.2,
+                }, "same").to(this.room.scale, {
+                    x: 0.2,
+                    y: 0.2,
+                    z: 0.2,
+                }, "same")
             },
 
             all: () => {
@@ -237,7 +241,7 @@ export default class Controls {
 
                     if (section.classList.contains("right")) {
                         GSAP.to(section, {
-                            borderTopLeftRadius: 10,
+                            borderTopLeftRadius: 50,
                             scrollTrigger: {
                                 trigger: section,
                                 start: "top bottom",
@@ -246,7 +250,7 @@ export default class Controls {
                             }
                         })
                         GSAP.to(section, {
-                            borderBottomLeftRadius: 700,
+                            borderBottomLeftRadius: 100,
                             scrollTrigger: {
                                 trigger: section,
                                 start: "bottom bottom",
@@ -256,7 +260,7 @@ export default class Controls {
                         })
                     } else {
                         GSAP.to(section, {
-                            borderTopRightRadius: 10,
+                            borderTopRightRadius: 50,
                             scrollTrigger: {
                                 trigger: section,
                                 start: "top bottom",
@@ -265,7 +269,7 @@ export default class Controls {
                             }
                         })
                         GSAP.to(section, {
-                            borderBottomRightRadius: 700,
+                            borderBottomRightRadius: 100,
                             scrollTrigger: {
                                 trigger: section,
                                 start: "bottom bottom",
